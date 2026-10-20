@@ -6,9 +6,9 @@ Core JWT authentication and authorization library for Python web frameworks.
 
 `axioms-core-py` provides framework-agnostic JWT token validation, JWKS management with background refresh, and claim-based authorization. This is the foundation for framework-specific integrations:
 
-- [axioms-flask-py](https://github.com/abhishektiwari/axioms-flask-py) - Flask integration
-- [axioms-fastapi](https://github.com/abhishektiwari/axioms-fastapi) - FastAPI integration
-- [axioms-drf-py](https://github.com/abhishektiwari/axioms-drf-py) - Django REST Framework integration
+- [axioms-flask-py](https://github.com/axioms-io/axioms-flask-py) - Flask integration
+- [axioms-fastapi](https://github.com/axioms-io/axioms-fastapi) - FastAPI integration
+- [axioms-drf-py](https://github.com/axioms-io/axioms-drf-py) - Django REST Framework integration
 
 > Note: For most use cases, use one of the framework integrations above instead of using this package directly.
 
