@@ -309,8 +309,9 @@ class TestValidateTokenHeader:
             json.dumps(payload_data).encode()
         ).rstrip(b"=")
 
-        # Create a fake token (signature doesn't matter for header validation)
-        fake_token = f"{header_b64.decode()}.{payload_b64.decode()}.fake_signature"
+        # Header parsing decodes the signature, so it must be valid base64url.
+        signature_b64 = base64.urlsafe_b64encode(b"fake_signature").rstrip(b"=")
+        fake_token = f"{header_b64.decode()}.{payload_b64.decode()}.{signature_b64.decode()}"
 
         with pytest.raises(AxiomsError) as exc_info:
             validate_token_header(fake_token)
@@ -342,8 +343,9 @@ class TestValidateTokenHeader:
             json.dumps(payload_data).encode()
         ).rstrip(b"=")
 
-        # Create a fake token (signature doesn't matter for header validation)
-        fake_token = f"{header_b64.decode()}.{payload_b64.decode()}.fake_signature"
+        # Header parsing decodes the signature, so it must be valid base64url.
+        signature_b64 = base64.urlsafe_b64encode(b"fake_signature").rstrip(b"=")
+        fake_token = f"{header_b64.decode()}.{payload_b64.decode()}.{signature_b64.decode()}"
 
         with pytest.raises(AxiomsError) as exc_info:
             validate_token_header(fake_token)
